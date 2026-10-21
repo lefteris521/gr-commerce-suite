@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GR Commerce Suite | The all-in-one Greek logistics & accounting bridge for WooCommerce</title>
+  <meta name="description" content="Find missing COD payments during your free trial, and let the plugin pay for itself before you are ever billed. Bulk ACS & Box Now vouchers, COD CSV reconciliation, and high-performance Skroutz XML feed.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f172a',
+            },
+            roi: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glow-roi {
+      box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.25);
+    }
+    .grid-pattern {
+      background-image: radial-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-900">
+
+  <!-- Top Announcement Bar: Risk-Free ROI Focus -->
+  <aside aria-label="Announcement" class="bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 text-white text-xs md:text-sm font-medium py-2 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+      <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-white text-emerald-800 uppercase tracking-wide">
+        Guaranteed ROI
+      </span>
+      <span>
+        Find missing COD payments during your free trial, and let the plugin pay for itself before you are ever billed.
+      </span>
+      <a href="#hero-offer" class="underline font-semibold hover:text-emerald-100 inline-flex items-center ml-1">
+        Claim Free Trial &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <!-- Section 1: Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/90 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Title & Tagline -->
+        <div class="flex flex-col">
+          <a href="#" class="flex items-center gap-2 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xl sm:text-2xl font-extrabold tracking-tight font-display text-white">
+                GR Commerce Suite
+              </span>
+            </div>
+          </a>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium tracking-tight mt-0.5">
+            The all-in-one Greek logistics & accounting bridge for WooCommerce.
+          </p>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="#features" class="hover:text-emerald-400 transition-colors">Features</a>
+          <a href="#cod-roi" class="hover:text-emerald-400 transition-colors">How ROI Works</a>
+          <a href="#pricing" class="hover:text-emerald-400 transition-colors">Pricing</a>
+          <a href="#guarantee" class="hover:text-emerald-400 transition-colors">Guarantee</a>
+          <a href="#pricing" class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-md shadow-emerald-500/20 transition-all hover:shadow-emerald-500/30">
+            Start 30-Day Free Trial
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex md:hidden">
+          <button id="mobile-menu-btn" type="button" class="text-slate-400 hover:text-white focus:outline-none p-2" aria-label="Toggle navigation menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-slate-800">
+        <div class="flex flex-col gap-3 text-sm font-medium text-slate-300">
+          <a href="#features" class="hover:text-emerald-400 py-1">Features</a>
+          <a href="#cod-roi" class="hover:text-emerald-400 py-1">How ROI Works</a>
+          <a href="#pricing" class="hover:text-emerald-400 py-1">Pricing</a>
+          <a href="#guarantee" class="hover:text-emerald-400 py-1">Guarantee</a>
+          <a href="#pricing" class="mt-2 text-center py-2.5 rounded-lg text-sm font-semibold bg-emerald-500 text-slate-950">
+            Start 30-Day Free Trial
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 2: The Risk-Free Offer (Hero Section) -->
+    <section id="hero-offer" class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32 grid-pattern">
+      <!-- Glow ambient background blobs -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/3 left-1/4 w-80 h-80 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+          
+          <!-- Risk-Free ROI Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            100% Risk-Free ROI Guarantee for Greek E-commerce
+          </div>
+
+          <!-- Main Hero Headline: Core Message -->
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white leading-tight sm:leading-tight mb-6">
+            Find missing COD payments during your free trial, and let the plugin pay for itself before you are ever billed.
+          </h1>
+
+          <!-- The Exact Required Offer Statement -->
+          <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto mb-10">
+            If it doesn't instantly save you hours of manual voucher printing or recover missing cash flow from unpaid COD orders, cancel before your trial ends and pay nothing.
+          </p>
+
+          <!-- Call to Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <a href="#pricing" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5">
+              <span>Try it free for 30 days.</span>
+              <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <a href="#cod-roi" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-base font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">
+              <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>See How It Audits COD Cash</span>
+            </a>
+          </div>
+
+          <!-- Micro-Trust Points -->
+          <div class="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-slate-400">
+            <span class="inline-flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              Instant 30-Day Zero-Risk Trial
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              No Lock-In, Cancel Anytime
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              100% On-Premise Local Data
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Interactive Visual ROI Dashboard Teaser -->
+        <div class="mt-14 max-w-5xl mx-auto rounded-2xl bg-slate-800/80 border border-slate-700/80 shadow-2xl overflow-hidden glow-roi">
+          <!-- Window Header -->
+          <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-700 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              <span class="text-xs font-mono text-slate-400 ml-2">WooCommerce Admin &gt; GR Commerce Suite &gt; COD Reconciliation Engine</span>
+            </div>
+            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              ● Active Trial Audit
+            </span>
+          </div>
+
+          <!-- Dashboard Content Mockup -->
+          <div class="p-6 sm:p-8 bg-slate-900/50">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              
+              <!-- Metric 1: Recovered COD Money -->
+              <div class="bg-slate-800/90 rounded-xl p-4 border border-emerald-500/30 relative overflow-hidden">
+                <div class="text-xs uppercase font-semibold text-emerald-400 tracking-wider">Unpaid COD Recovered</div>
+                <div class="text-2xl sm:text-3xl font-extrabold text-white mt-1">€387.40</div>
+                <p class="text-xs text-slate-400 mt-1">5 uncredited courier parcels detected in last CSV audit</p>
+                <div class="mt-2 inline-flex items-center text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
+                  4.3x Plugin Cost Recovered
+                </div>
+              </div>
+
+              <!-- Metric 2: Courier Vouchers Handled -->
+              <div class="bg-slate-800/90 rounded-xl p-4 border border-slate-700">
+                <div class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Bulk Vouchers Printed</div>
+                <div class="text-2xl sm:text-3xl font-extrabold text-white mt-1">1,482</div>
+                <p class="text-xs text-slate-400 mt-1">ACS Courier & Box Now thermal batches (0 errors)</p>
+                <div class="mt-2 inline-flex items-center text-xs font-semibold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">
+                  ~14 hrs manual work saved
+                </div>
+              </div>
+
+              <!-- Metric 3: Skroutz Feed Sync -->
+              <div class="bg-slate-800/90 rounded-xl p-4 border border-slate-700">
+                <div class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Skroutz XML Feed Status</div>
+                <div class="text-2xl sm:text-3xl font-extrabold text-white mt-1">100% Synced</div>
+                <p class="text-xs text-slate-400 mt-1">Background cron running smoothly without server lag</p>
+                <div class="mt-2 inline-flex items-center text-xs font-semibold text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded">
+                  0 timeout errors
+                </div>
+              </div>
+            </div>
+
+            <!-- Sample Cross-Check Table -->
+            <div class="overflow-x-auto rounded-lg border border-slate-700 bg-slate-800/60">
+              <table class="w-full text-left text-xs sm:text-sm text-slate-300">
+                <thead class="bg-slate-800 text-slate-400 uppercase font-mono text-xs">
+                  <tr>
+                    <th class="px-4 py-3">Order #</th>
+                    <th class="px-4 py-3">Courier / Voucher</th>
+                    <th class="px-4 py-3">WooCommerce Total</th>
+                    <th class="px-4 py-3">Courier CSV Payout</th>
+                    <th class="px-4 py-3">Discrepancy Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700/60 font-mono">
+                  <tr class="bg-emerald-950/20">
+                    <td class="px-4 py-3 font-bold text-white">#10842</td>
+                    <td class="px-4 py-3">ACS (Voucher 8192384102)</td>
+                    <td class="px-4 py-3">€89.00 COD</td>
+                    <td class="px-4 py-3 text-rose-400 font-bold">€0.00 (Missing)</td>
+                    <td class="px-4 py-3">
+                      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-sans font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40">
+                        Discrepancy: Claim €89.00
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-bold text-white">#10839</td>
+                    <td class="px-4 py-3">Box Now (Locker #1480)</td>
+                    <td class="px-4 py-3">€42.50 COD</td>
+                    <td class="px-4 py-3 text-emerald-400 font-bold">€42.50 Paid</td>
+                    <td class="px-4 py-3">
+                      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-sans font-semibold bg-emerald-500/20 text-emerald-300">
+                        ✓ Reconciled & Marked Completed
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="bg-emerald-950/20">
+                    <td class="px-4 py-3 font-bold text-white">#10831</td>
+                    <td class="px-4 py-3">ACS (Voucher 8192384019)</td>
+                    <td class="px-4 py-3">€124.90 COD</td>
+                    <td class="px-4 py-3 text-rose-400 font-bold">€0.00 (Missing)</td>
+                    <td class="px-4 py-3">
+                      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-sans font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40">
+                        Discrepancy: Claim €124.90
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>The plugin pays for itself before your 30-day trial expires by finding these uncredited payouts.</span>
+              </div>
+              <a href="#pricing" class="text-emerald-400 hover:text-emerald-300 font-semibold underline">
+                Scan your store free today &rarr;
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Deep Dive on Risk-Free ROI: The Math of Greek COD -->
+    <section id="cod-roi" class="py-16 bg-slate-950/60 border-y border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+              Why Greek E-Commerce Loses Thousands to COD
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white tracking-tight leading-tight mb-4">
+              How the 30-Day Free Trial Guarantees a 100% Risk-Free ROI
+            </h2>
+            <p class="text-slate-300 text-base leading-relaxed mb-6">
+              In Greece, over <strong class="text-white">35% to 50% of orders are placed via Cash on Delivery (Αντικαταβολή)</strong>. Greek couriers deliver the parcel, collect cash, and weeks later deposit a lumped bank remittance accompanied by an opaque CSV sheet.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-white">Find Missing COD Payments During Your Free Trial</h3>
+                  <p class="text-sm text-slate-400">Simply upload the courier payout CSV. The plugin matches every tracking code with your WooCommerce order database. Lost parcels, incorrect fees, and missing deposits are flagged in seconds.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-blue-500/20 text-blue-400 shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-white">Plugin Pays for Itself Before You Are Ever Billed</h3>
+                  <p class="text-sm text-slate-400">At €89/year, discovering just a single missing €90 COD order or saving 2 hours of voucher generation pays for your entire annual subscription before the 30-day trial concludes.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-slate-700 text-slate-300 shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-white">Zero Financial Exposure</h3>
+                  <p class="text-sm text-slate-400">If you scan your courier files and find 100% accuracy with zero discrepancies, and you don't care about saving hours on thermal printing, simply cancel anytime before day 30 with 1 click.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROI Calculator Card -->
+          <div class="bg-slate-900 rounded-2xl border border-slate-700 p-6 sm:p-8 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2 font-display">The "Self-Funding" Calculation</h3>
+            <p class="text-xs text-slate-400 mb-6">See how fast GR Commerce Suite generates positive return on investment:</p>
+            
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3.5 rounded-lg bg-slate-800/80 border border-slate-700">
+                <span class="text-sm text-slate-300">Average Greek COD Order Value</span>
+                <span class="text-sm font-mono font-bold text-white">€45.00 - €95.00</span>
+              </div>
+              <div class="flex items-center justify-between p-3.5 rounded-lg bg-slate-800/80 border border-slate-700">
+                <span class="text-sm text-slate-300">Unreconciled Courier Slippage</span>
+                <span class="text-sm font-mono font-bold text-rose-400">1% - 3% of COD volume</span>
+              </div>
+              <div class="flex items-center justify-between p-3.5 rounded-lg bg-slate-800/80 border border-slate-700">
+                <span class="text-sm text-slate-300">Typical Recovered Cash per Store</span>
+                <span class="text-sm font-mono font-bold text-emerald-400">€240 - €1,800 / year</span>
+              </div>
+              <div class="flex items-center justify-between p-3.5 rounded-lg bg-emerald-950/40 border border-emerald-500/40">
+                <span class="text-sm font-semibold text-emerald-300">Annual Plugin Cost</span>
+                <span class="text-sm font-mono font-bold text-emerald-300">€89 / year</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-slate-800 text-center">
+              <div class="text-xs text-slate-400 uppercase font-semibold">Net Expected Benefit</div>
+              <div class="text-2xl font-black text-emerald-400 font-display mt-1">+€150 to +€1,700 Net Profit</div>
+              <p class="text-xs text-slate-400 mt-2">Plus over 50 hours saved each year on label printing.</p>
+              <a href="#pricing" class="mt-4 inline-block w-full text-center py-3 px-4 rounded-xl text-sm font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-colors">
+                Try it free for 30 days &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Features Section (3 cards) -->
+    <section id="features" class="py-20 md:py-28 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+            Engineered for Greek WooCommerce Stores
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white tracking-tight mt-4 mb-4">
+            Three Core Engines. One Seamless WooCommerce Suite.
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg">
+            Built specifically to solve the unique bottlenecks of running a WooCommerce e-shop in Greece.
+          </p>
+        </div>
+
+        <!-- 3 Feature Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Feature Card 1: Courier Automation -->
+          <div class="bg-slate-800/80 rounded-2xl p-8 border border-slate-700/80 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col justify-between group">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+              </div>
+
+              <div class="text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">
+                ACS & Box Now bulk thermal vouchers
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-white mb-4">
+                Courier Automation
+              </h3>
+
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Eliminate hours of manual data entry into courier portals. Select 50 orders at once and generate ACS Courier and Box Now locker shipping vouchers in a single click. 
+              </p>
+
+              <ul class="space-y-2.5 text-xs text-slate-300 border-t border-slate-700/70 pt-6">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Bulk 100x150mm & A6 PDF thermal printing</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Automated tracking code sync to customers</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Supports Box Now Locker APM Picker in checkout</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-700/60">
+              <span class="text-xs font-semibold text-slate-400">Save ~15-20 hours every month</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 2: COD Reconciliation -->
+          <div class="bg-slate-800/80 rounded-2xl p-8 border-2 border-emerald-500/50 hover:border-emerald-400 transition-all duration-300 shadow-xl shadow-emerald-500/10 flex flex-col justify-between group relative">
+            
+            <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-emerald-500 text-slate-950 text-xs font-bold uppercase tracking-wider shadow-md">
+              Fastest ROI Generator
+            </div>
+
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+
+              <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">
+                Cross-check courier payouts via CSV
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-white mb-4">
+                COD Reconciliation
+              </h3>
+
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Never lose a single euro of cash on delivery. Simply drop your bank/courier settlement CSV files into WooCommerce to cross-reference every payout against your store's database.
+              </p>
+
+              <ul class="space-y-2.5 text-xs text-slate-300 border-t border-slate-700/70 pt-6">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Instantly reveals uncredited or underpaid COD orders</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Auto-updates matched orders to "Completed"</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Export audit reports to challenge courier billing errors</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-700/60">
+              <span class="text-xs font-semibold text-emerald-400">Recovers €180 - €1,200+ annually</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 3: Skroutz XML Feed -->
+          <div class="bg-slate-800/80 rounded-2xl p-8 border border-slate-700/80 hover:border-teal-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/10 flex flex-col justify-between group">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 transition-transform">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                </svg>
+              </div>
+
+              <div class="text-xs font-bold uppercase tracking-wider text-teal-400 mb-2">
+                High-performance background generation
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold font-display text-white mb-4">
+                Skroutz XML Feed
+              </h3>
+
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Stop XML feed crashes that kill your store's memory. Generate 100% compliant Skroutz and BestPrice product feeds effortlessly using low-overhead background workers.
+              </p>
+
+              <ul class="space-y-2.5 text-xs text-slate-300 border-t border-slate-700/70 pt-6">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Non-blocking chunked WP-Cron generation</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Handles 50,000+ SKUs with zero 504 gateway timeouts</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Custom field mapping for color, size & availability</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-700/60">
+              <span class="text-xs font-semibold text-slate-400">Zero downtime for marketplace sync</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Pricing -->
+    <section id="pricing" class="py-20 md:py-28 bg-slate-950 relative overflow-hidden">
+      <!-- Glow -->
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+            Transparent, Honest Pricing
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white tracking-tight mt-4 mb-4">
+            One Plan. Complete Risk Protection.
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg">
+            Start completely free for 30 days. Let the COD reconciliation identify missing courier money before you spend a single cent.
+          </p>
+        </div>
+
+        <!-- Single Pricing Card -->
+        <div class="max-w-xl mx-auto">
+          <div class="rounded-3xl bg-gradient-to-b from-slate-800 to-slate-900 border-2 border-emerald-500/50 p-8 sm:p-12 shadow-2xl relative glow-roi">
+            
+            <!-- Top Badge -->
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <span class="px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                Full Commercial License
+              </span>
+              <span class="text-xs text-slate-400 font-mono">WooCommerce 8.x & 9.x HPOS Ready</span>
+            </div>
+
+            <!-- Exact Required Pricing String -->
+            <div class="mb-6">
+              <div class="text-3xl sm:text-4xl font-extrabold font-display text-white tracking-tight">
+                €89 / year (Includes a 30-Day Free Trial)
+              </div>
+              <p class="text-sm text-slate-400 mt-2">
+                Equivalent to just <strong class="text-emerald-400">€7.41 / month</strong>. Cancel anytime with a single click before day 30 and pay nothing.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-700/80 mb-8">
+              <div class="flex items-center gap-3">
+                <span class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <p class="text-xs text-slate-300 leading-snug">
+                  <strong class="text-white">Our Risk-Free ROI Promise:</strong> Find missing COD payments during your free trial, and let the plugin pay for itself before you are ever billed.
+                </p>
+              </div>
+            </div>
+
+            <!-- Features Checklist -->
+            <div class="space-y-3.5 text-sm text-slate-200 mb-8">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Courier Automation:</strong> ACS & Box Now bulk thermal vouchers</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>COD Reconciliation:</strong> Cross-check courier payouts via CSV</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Skroutz XML Feed:</strong> High-performance background generation</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Unlimited monthly orders & courier vouchers (no per-parcel fees)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Full WordPress & WooCommerce updates for 1 full year</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Dedicated support via email: lethshiningstar@gmail.com</span>
+              </div>
+            </div>
+
+            <!-- Big CTA Button -->
+            <a href="mailto:lethshiningstar@gmail.com?subject=GR%20Commerce%20Suite%20-%2030-Day%20Free%20Trial%20Access" class="block w-full text-center py-4 px-6 rounded-xl text-base font-extrabold bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5">
+              Try it free for 30 days.
+            </a>
+
+            <!-- Double-Protection Notice -->
+            <p class="text-xs text-center text-slate-400 mt-4 leading-normal">
+              🔒 30-Day Free Trial + 14-Day Money-Back Guarantee. Pay €0 today.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-slate-900 border-t border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-white text-center mb-10">
+          Frequently Asked Questions
+        </h2>
+        
+        <div class="space-y-6">
+          <div class="p-6 rounded-xl bg-slate-800/60 border border-slate-700">
+            <h3 class="text-base font-bold text-white mb-2">How exactly does the 30-day free trial work?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              You get immediate access to download and install the full version of GR Commerce Suite. You can generate unlimited vouchers and run COD reconciliation audits on your historical orders. If you cancel before your 30-day trial ends, you are never billed.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-slate-800/60 border border-slate-700">
+            <h3 class="text-base font-bold text-white mb-2">How does COD Reconciliation find missing payments?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              When courier companies transfer funds, they provide a CSV breakdown. Many store owners never manually check thousands of tracking codes, resulting in uncredited parcels slipping through. GR Commerce Suite cross-matches courier CSV rows with your WooCommerce orders, instantly highlighting any unpaid or missing vouchers.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-slate-800/60 border border-slate-700">
+            <h3 class="text-base font-bold text-white mb-2">Will the Skroutz XML generator slow down my WooCommerce server?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              No. Unlike legacy plugins that build the entire XML in a single PHP thread—often crashing servers with 504 timeouts—GR Commerce Suite uses high-performance chunked background generation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Section 5: Footer / Legal -->
+  <footer id="guarantee" class="bg-slate-950 border-t border-slate-800 pt-16 pb-12 text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Footer Grid: Legal & Guarantees -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-slate-800">
+        
+        <!-- Legal Card 1: 14-Day Money-Back Guarantee -->
+        <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h4 class="text-base font-bold text-white font-display">14-Day Money-Back Guarantee</h4>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Even after your 30-day trial ends, you are protected by a 14-day refund policy if the plugin fails to generate ROI for your business.
+          </p>
+        </div>
+
+        <!-- Legal Card 2: Privacy Policy -->
+        <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h4 class="text-base font-bold text-white font-display">Privacy Policy</h4>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            We do not process, store, or transmit your customers' PII to our servers. All plugin data remains on your local WordPress database.
+          </p>
+        </div>
+
+        <!-- Legal Card 3: Support Contact -->
+        <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h4 class="text-base font-bold text-white font-display">Developer Support</h4>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-2">
+            Contact support at: lethshiningstar@gmail.com
+          </p>
+          <a href="mailto:lethshiningstar@gmail.com" class="text-xs text-emerald-400 hover:text-emerald-300 font-semibold underline">
+            Send an email for assistance &rarr;
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Bottom Brand and Copyright -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+        <div>
+          <span class="font-bold text-white">GR Commerce Suite</span> &mdash; 
+          <span class="text-slate-400">The all-in-one Greek logistics & accounting bridge for WooCommerce.</span>
+        </div>
+        <div class="text-slate-500">
+          &copy; 2026 GR Commerce Suite. All rights reserved. Crafted for Greek e-commerce.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Simple script for mobile navigation toggle -->
+  <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
