@@ -6,7 +6,7 @@
   "a_main": "Main",
   "a_menu": "Open menu",
   "a_menu_list": "Menu",
-  "lang_switch": "<div class=\"langsw\" role=\"group\" aria-label=\"Language\"><span aria-current=\"true\" lang=\"en\">EN</span><a href=\"el.html\" hreflang=\"el\" lang=\"el\">ΕΛ</a></div>",
+  "lang_switch": "<div class=\"langsw\" role=\"group\" aria-label=\"Language\"><span aria-current=\"true\" lang=\"en\">EN</span><a href=\"index.html\" hreflang=\"el\" lang=\"el\">ΕΛ</a></div>",
   "nav_journey": "How it works",
   "nav_cod": "COD",
   "nav_modules": "Modules",

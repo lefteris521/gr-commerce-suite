@@ -1,4 +1,4 @@
-"""Build index.html (en) and el.html (el) from template.html + strings.<lang>.json.
+"""Build index.html (el, main) and en.html (en) from template.html + strings.<lang>.json.
 
 Fails if the template uses a key that a language does not define, or if a language
 defines keys the template never uses. Run:  python -I src/build.py
@@ -10,7 +10,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-OUT = {'en': 'index.html', 'el': 'el.html'}
+OUT = {'el': 'index.html', 'en': 'en.html'}  # Greek is the main address
 KEY = re.compile(r'\{\{([a-z0-9_.]+)\}\}')
 
 template = open(os.path.join(HERE, 'template.html'), encoding='utf-8').read()

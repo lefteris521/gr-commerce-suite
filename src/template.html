@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{meta_title}}</title>
   <meta name="description" content="{{meta_desc}}">
-  <link rel="alternate" hreflang="en" href="index.html">
-  <link rel="alternate" hreflang="el" href="el.html">
+  <link rel="alternate" hreflang="el" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
+  <link rel="alternate" hreflang="x-default" href="index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>try{var l=localStorage.getItem('grcs-lang');if((l==='el'||l==='en')&&l!==document.documentElement.lang){location.replace((l==='el'?'index.html':'en.html')+location.hash);}}catch(e){}</script>
   <script>try{var s=localStorage.getItem('grcs-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}</script>
   <style>
     /* Layout: one order travels down the page; each stop pairs a short text with the real plugin screen. */
@@ -312,7 +314,8 @@
     .contact span { color: var(--text); font-weight: 600; user-select: all; }
     .steps { display: grid; gap: 0; counter-reset: s; margin-top: 18px; }
     .step { counter-increment: s; display: grid; grid-template-columns: 32px 1fr; gap: 4px 14px; padding: 14px 16px; margin-bottom: 10px; border-radius: 12px; }
-    .step::before { content: counter(s); grid-row: span 2; width: 32px; height: 32px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+    .step::after { content: counter(s); grid-column: 1; grid-row: 1 / span 2; width: 32px; height: 32px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+    .step b, .step span { grid-column: 2; }
     .step b { font-size: 16px; }
     .step span { color: var(--text-2); font-size: 15px; }
     .guarantee { margin-top: 18px; color: var(--text-2); font-size: 15px; }
@@ -662,6 +665,20 @@
     }); });
     if (mq.addEventListener) { mq.addEventListener('change', paint); }
     paint();
+  })();
+  (function () {
+    var ids = ['top', 'journey', 's-checkout', 's-voucher', 's-delivery', 'cod', 'feeds', 'modules', 'quality', 'price', 'faq'];
+    function here() {
+      var best = '';
+      ids.forEach(function (id) { var el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= 140) { best = id; } });
+      return best && best !== 'top' ? '#' + best : '';
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('.langsw a[hreflang]'), function (a) {
+      a.addEventListener('click', function () {
+        try { localStorage.setItem('grcs-lang', a.getAttribute('hreflang')); } catch (e) {}
+        a.href = a.getAttribute('href').split('#')[0] + here();
+      });
+    });
   })();
   (function () {
     var btn = document.getElementById('menu-btn');

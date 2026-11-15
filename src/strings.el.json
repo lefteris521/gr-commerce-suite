@@ -6,7 +6,7 @@
   "a_main": "Κύριο μενού",
   "a_menu": "Άνοιγμα μενού",
   "a_menu_list": "Μενού",
-  "lang_switch": "<div class=\"langsw\" role=\"group\" aria-label=\"Γλώσσα\"><a href=\"index.html\" hreflang=\"en\" lang=\"en\">EN</a><span aria-current=\"true\" lang=\"el\">ΕΛ</span></div>",
+  "lang_switch": "<div class=\"langsw\" role=\"group\" aria-label=\"Γλώσσα\"><a href=\"en.html\" hreflang=\"en\" lang=\"en\">EN</a><span aria-current=\"true\" lang=\"el\">ΕΛ</span></div>",
   "nav_journey": "Πώς λειτουργεί",
   "nav_cod": "Αντικαταβολές",
   "nav_modules": "Ενότητες",

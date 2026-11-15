@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GR Commerce Suite — couriers, COD reconciliation and Skroutz for WooCommerce</title>
-  <meta name="description" content="A WooCommerce plugin for stores in Greece. Issue ACS and BOX NOW vouchers, reconcile courier COD payouts against your orders, publish the Skroutz feed and collect invoice details from AADE. 30-day free trial.">
-  <link rel="alternate" hreflang="en" href="index.html">
-  <link rel="alternate" hreflang="el" href="el.html">
+  <title>GR Commerce Suite — Κούριερ, συμφωνία αντικαταβολών και Skroutz για WooCommerce</title>
+  <meta name="description" content="Plugin WooCommerce για καταστήματα στην Ελλάδα. Έκδοση voucher ACS και BOX NOW, συμφωνία των αποδόσεων αντικαταβολών με τις παραγγελίες, Skroutz XML feed και στοιχεία τιμολογίου από την ΑΑΔΕ. Δωρεάν δοκιμή 30 ημερών.">
+  <link rel="alternate" hreflang="el" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
+  <link rel="alternate" hreflang="x-default" href="index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>try{var l=localStorage.getItem('grcs-lang');if((l==='el'||l==='en')&&l!==document.documentElement.lang){location.replace((l==='el'?'index.html':'en.html')+location.hash);}}catch(e){}</script>
   <script>try{var s=localStorage.getItem('grcs-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}</script>
   <style>
     /* Layout: one order travels down the page; each stop pairs a short text with the real plugin screen. */
@@ -312,7 +314,8 @@
     .contact span { color: var(--text); font-weight: 600; user-select: all; }
     .steps { display: grid; gap: 0; counter-reset: s; margin-top: 18px; }
     .step { counter-increment: s; display: grid; grid-template-columns: 32px 1fr; gap: 4px 14px; padding: 14px 16px; margin-bottom: 10px; border-radius: 12px; }
-    .step::before { content: counter(s); grid-row: span 2; width: 32px; height: 32px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+    .step::after { content: counter(s); grid-column: 1; grid-row: 1 / span 2; width: 32px; height: 32px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+    .step b, .step span { grid-column: 2; }
     .step b { font-size: 16px; }
     .step span { color: var(--text-2); font-size: 15px; }
     .guarantee { margin-top: 18px; color: var(--text-2); font-size: 15px; }
@@ -342,37 +345,37 @@
 
 <header class="site">
   <div class="bar glass">
-    <a class="brand" href="#top" aria-label="GR Commerce Suite home"><span class="brand-name">GR Commerce Suite</span></a>
-    <nav class="links" aria-label="Main">
-      <a href="#journey">How it works</a>
-      <a href="#cod">COD</a>
-      <a href="#modules">Modules</a>
-      <a href="#price">Price</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-main" href="#price">Free trial</a>
+    <a class="brand" href="#top" aria-label="GR Commerce Suite, αρχική"><span class="brand-name">GR Commerce Suite</span></a>
+    <nav class="links" aria-label="Κύριο μενού">
+      <a href="#journey">Πώς λειτουργεί</a>
+      <a href="#cod">Αντικαταβολές</a>
+      <a href="#modules">Ενότητες</a>
+      <a href="#price">Τιμή</a>
+      <a href="#faq">Ερωτήσεις</a>
+      <a class="btn btn-main" href="#price">Δωρεάν δοκιμή</a>
     </nav>
     <div class="tools">
       <div class="prefs">
-        <div class="langsw" role="group" aria-label="Language"><span aria-current="true" lang="en">EN</span><a href="el.html" hreflang="el" lang="el">ΕΛ</a></div>
-        <div class="themesw" role="group" aria-label="Colour theme">
-          <button type="button" data-theme-set="light" aria-pressed="false" aria-label="Light mode" title="Light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-          <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+        <div class="langsw" role="group" aria-label="Γλώσσα"><a href="en.html" hreflang="en" lang="en">EN</a><span aria-current="true" lang="el">ΕΛ</span></div>
+        <div class="themesw" role="group" aria-label="Θέμα εμφάνισης">
+          <button type="button" data-theme-set="light" aria-pressed="false" aria-label="Φωτεινό θέμα" title="Φωτεινό θέμα"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+          <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Σκούρο θέμα" title="Σκούρο θέμα"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
         </div>
       </div>
-      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu">
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="mmenu">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
-  <nav class="mmenu glass" id="mmenu" aria-label="Menu">
+  <nav class="mmenu glass" id="mmenu" aria-label="Μενού">
     <div class="mm">
-      <a href="#journey">How it works</a>
-      <a href="#cod">COD</a>
-      <a href="#modules">Modules</a>
-      <a href="#price">Price</a>
-      <a href="#faq">FAQ</a>
+      <a href="#journey">Πώς λειτουργεί</a>
+      <a href="#cod">Αντικαταβολές</a>
+      <a href="#modules">Ενότητες</a>
+      <a href="#price">Τιμή</a>
+      <a href="#faq">Ερωτήσεις</a>
     </div>
-    <a class="btn btn-main" href="#price">Free trial</a>
+    <a class="btn btn-main" href="#price">Δωρεάν δοκιμή</a>
   </nav>
 </header>
 
@@ -380,22 +383,22 @@
   <div class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-      <h1>Every order, from checkout to the cash on delivery in your account.</h1>
-      <p class="lead">GR Commerce Suite runs the work that follows a sale in a Greek WooCommerce store: invoice details at checkout, ACS and BOX NOW vouchers, tracking, and the check that every COD payment really reached you.</p>
+      <h1>Κάθε παραγγελία, από το checkout έως την αντικαταβολή στον λογαριασμό σας.</h1>
+      <p class="lead">Το GR Commerce Suite αναλαμβάνει τις εργασίες που ακολουθούν την πώληση σε ένα ελληνικό κατάστημα WooCommerce: στοιχεία τιμολογίου στο checkout, voucher ACS και BOX NOW, παρακολούθηση αποστολών και έλεγχο ότι κάθε αντικαταβολή αποδόθηκε πράγματι.</p>
       <div class="hero-actions">
-        <a class="btn btn-main" href="#price">Start the 30-day free trial</a>
-        <a class="btn btn-glass glass" href="#journey">Follow an order through the plugin</a>
+        <a class="btn btn-main" href="#price">Ξεκινήστε τη δωρεάν δοκιμή 30 ημερών</a>
+        <a class="btn btn-glass glass" href="#journey">Δείτε τη διαδρομή μιας παραγγελίας</a>
       </div>
       </div>
 
-      <div class="rail glass" id="journey" aria-label="The stages of one example order">
-        <div class="rail-head"><span>Example order</span><b class="num">#1047, €89.00 COD</b></div>
+      <div class="rail glass" id="journey" aria-label="Τα στάδια μιας παραγγελίας-παραδείγματος">
+        <div class="rail-head"><span>Παραγγελία-παράδειγμα</span><b class="num">#1047, αντικαταβολή €89,00</b></div>
         <div class="stops">
-          <a class="stop-chip" href="#s-checkout"><b>Checkout</b><span>Invoice, BOX NOW locker</span></a>
+          <a class="stop-chip" href="#s-checkout"><b>Checkout</b><span>Τιμολόγιο, θυρίδα BOX NOW</span></a>
           <a class="stop-chip" href="#s-voucher"><b>Voucher</b><span class="num">9900000522</span></a>
-          <a class="stop-chip" href="#s-delivery"><b>Delivery</b><span>Collected from the locker</span></a>
-          <a class="stop-chip" href="#cod"><b>Remittance</b><span class="num">€89.00 paid by BOX NOW</span></a>
-          <a class="stop-chip done" href="#cod"><b>Reconciled</b><span>Matched to the order</span></a>
+          <a class="stop-chip" href="#s-delivery"><b>Παράδοση</b><span>Παραλαβή από θυρίδα</span></a>
+          <a class="stop-chip" href="#cod"><b>Απόδοση</b><span class="num">€89,00 από BOX NOW</span></a>
+          <a class="stop-chip done" href="#cod"><b>Συμφωνημένο</b><span>Αντιστοιχίστηκε στην παραγγελία</span></a>
         </div>
       </div>
     </div>
@@ -406,23 +409,23 @@
     <div class="wrap stop">
       <div>
         <div class="stop-no"><i>1</i>Checkout</div>
-        <h2>The customer asks for an invoice and picks a locker</h2>
-        <p class="body">At checkout the customer chooses receipt or invoice. For an invoice, the VAT number fills in the company name, tax office and activity from the AADE registry, using your own AADE credentials. BOX NOW customers pick their locker on a map.</p>
-        <ul class="points"><li>Classic and Blocks checkout</li><li>VAT number format checked before the order is placed</li><li>Cash on delivery rules per courier and payment method</li></ul>
+        <h2>Ο πελάτης ζητά τιμολόγιο και επιλέγει θυρίδα</h2>
+        <p class="body">Στο checkout ο πελάτης επιλέγει απόδειξη ή τιμολόγιο. Για τιμολόγιο, το ΑΦΜ συμπληρώνει επωνυμία, ΔΟΥ και δραστηριότητα από το μητρώο της ΑΑΔΕ, με τους δικούς σας κωδικούς ΑΑΔΕ. Όσοι επιλέγουν BOX NOW διαλέγουν θυρίδα στον χάρτη.</p>
+        <ul class="points"><li>Classic και Blocks checkout</li><li>Έλεγχος μορφής ΑΦΜ πριν από την ολοκλήρωση της παραγγελίας</li><li>Κανόνες αντικαταβολής ανά εταιρεία ταχυμεταφορών και τρόπο πληρωμής</li></ul>
       </div>
       <div class="screen glass">
-        <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Checkout</b><span class="eg">Example</span></div>
+        <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Checkout</b><span class="eg">Παράδειγμα</span></div>
         <div class="form">
-          <div><span class="fl">Document type</span><div class="seg"><span>Retail Receipt</span><span class="on">Invoice</span></div></div>
-          <div><span class="fl">ΑΦΜ (Greek VAT Number)</span><div class="in num"><span>099999999</span><span class="st ok">Details filled from AADE</span></div></div>
-          <div><span class="fl">Company name</span><div class="in auto"><span>EXAMPLE TRADING S.A.</span></div></div>
+          <div><span class="fl">Τύπος παραστατικού</span><div class="seg"><span>Απόδειξη λιανικής</span><span class="on">Τιμολόγιο</span></div></div>
+          <div><span class="fl">ΑΦΜ</span><div class="in num"><span>099999999</span><span class="st ok">Στοιχεία από την ΑΑΔΕ</span></div></div>
+          <div><span class="fl">Επωνυμία</span><div class="in auto"><span>ΠΑΡΑΔΕΙΓΜΑ ΕΜΠΟΡΙΚΗ Α.Ε.</span></div></div>
           <div class="pair">
-            <div><span class="fl">ΔΟΥ (Tax Office)</span><div class="in auto"><span>ΦΑΕ Αθηνών</span></div></div>
-            <div><span class="fl">Activity</span><div class="in auto"><span>Retail trade</span></div></div>
+            <div><span class="fl">ΔΟΥ</span><div class="in auto"><span>ΦΑΕ Αθηνών</span></div></div>
+            <div><span class="fl">Δραστηριότητα</span><div class="in auto"><span>Λιανικό εμπόριο</span></div></div>
           </div>
-          <div><span class="fl">BOX NOW locker</span><div class="in"><span>Thessaloniki, locker 1480</span><span class="ctl">Change</span></div></div>
+          <div><span class="fl">Θυρίδα BOX NOW</span><div class="in"><span>Θεσσαλονίκη, θυρίδα 1480</span><span class="ctl">Αλλαγή</span></div></div>
         </div>
-        <div class="foot-note">Synthetic VAT number and company, shown for illustration.</div>
+        <div class="foot-note">Φανταστικό ΑΦΜ και επωνυμία, μόνο για παρουσίαση.</div>
       </div>
     </div>
   </section>
@@ -432,23 +435,23 @@
     <div class="wrap stop flip">
       <div>
         <div class="stop-no"><i>2</i>Voucher</div>
-        <h2>Vouchers for many orders in one step</h2>
-        <p class="body">Select the orders, choose the courier and issue every voucher at once. The labels arrive as one PDF, ready for your printer.</p>
-        <ul class="points"><li>Bulk action in the WooCommerce order list, or from a single order</li><li>Up to 100 labels per PDF, in A4, A6 or thermal format</li><li>A voucher is never issued twice for the same order</li></ul>
+        <h2>Voucher για πολλές παραγγελίες με μία ενέργεια</h2>
+        <p class="body">Επιλέγετε τις παραγγελίες και την εταιρεία ταχυμεταφορών, και εκδίδονται όλα τα voucher μαζί. Οι ετικέτες έρχονται σε ένα PDF, έτοιμο για εκτύπωση.</p>
+        <ul class="points"><li>Μαζική ενέργεια στη λίστα παραγγελιών του WooCommerce ή από μία παραγγελία</li><li>Έως 100 ετικέτες ανά PDF, σε A4, A6 ή θερμικό εκτυπωτή</li><li>Δεν εκδίδεται ποτέ δεύτερο voucher για την ίδια παραγγελία</li></ul>
       </div>
       <div class="screen glass">
-        <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Orders</b><span class="eg">Example</span></div>
-        <div class="actions top"><span class="ctl sel">GRCS: Print Merged PDF Vouchers</span><span class="ctl primary">Apply</span><span class="hint">3 vouchers, thermal</span></div>
+        <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Παραγγελίες</b><span class="eg">Παράδειγμα</span></div>
+        <div class="actions top"><span class="ctl sel">GRCS: Εκτύπωση συγχωνευμένων voucher PDF</span><span class="ctl primary">Εφαρμογή</span><span class="hint">3 voucher, θερμικός εκτυπωτής</span></div>
         <div class="scroll"><table>
-          <thead><tr><th></th><th>Order</th><th>Courier</th><th>Voucher</th><th>Status</th></tr></thead>
+          <thead><tr><th></th><th>Παραγγελία</th><th>Κούριερ</th><th>Voucher</th><th>Κατάσταση</th></tr></thead>
           <tbody>
-            <tr class="hl"><td><i class="cb on"></i></td><td>#1047</td><td>BOX NOW</td><td>9900000522</td><td><span class="st ok">Issued</span></td></tr>
-            <tr><td><i class="cb on"></i></td><td>#1046</td><td>ACS</td><td>7700000150</td><td><span class="st ok">Issued</span></td></tr>
-            <tr><td><i class="cb on"></i></td><td>#1045</td><td>ACS</td><td>7700000149</td><td><span class="st ok">Issued</span></td></tr>
-            <tr><td><i class="cb"></i></td><td>#1044</td><td>BOX NOW</td><td>9900000519</td><td><span class="st info">In transit</span></td></tr>
+            <tr class="hl"><td><i class="cb on"></i></td><td>#1047</td><td>BOX NOW</td><td>9900000522</td><td><span class="st ok">Εκδόθηκε</span></td></tr>
+            <tr><td><i class="cb on"></i></td><td>#1046</td><td>ACS</td><td>7700000150</td><td><span class="st ok">Εκδόθηκε</span></td></tr>
+            <tr><td><i class="cb on"></i></td><td>#1045</td><td>ACS</td><td>7700000149</td><td><span class="st ok">Εκδόθηκε</span></td></tr>
+            <tr><td><i class="cb"></i></td><td>#1044</td><td>BOX NOW</td><td>9900000519</td><td><span class="st info">Σε μεταφορά</span></td></tr>
           </tbody>
         </table></div>
-        <div class="actions bottom"><span class="hint">The courier comes from each order’s shipping method.</span></div>
+        <div class="actions bottom"><span class="hint">Η εταιρεία ταχυμεταφορών προκύπτει από τον τρόπο αποστολής κάθε παραγγελίας.</span></div>
       </div>
     </div>
   </section>
@@ -457,21 +460,21 @@
   <section id="s-delivery" class="band">
     <div class="wrap stop">
       <div>
-        <div class="stop-no"><i>3</i>Delivery</div>
-        <h2>Tracking without opening the courier portal</h2>
-        <p class="body">Courier status updates arrive on the order. The customer receives a shipping email with the tracking number, and you print the day's handover manifest for the courier.</p>
-        <ul class="points"><li>Status updates for ACS and BOX NOW</li><li>Shipping email with tracking link</li><li>Courier handover manifest as PDF</li></ul>
+        <div class="stop-no"><i>3</i>Παράδοση</div>
+        <h2>Παρακολούθηση χωρίς είσοδο στο portal της εταιρείας ταχυμεταφορών</h2>
+        <p class="body">Οι ενημερώσεις της εταιρείας ταχυμεταφορών εμφανίζονται στην παραγγελία. Ο πελάτης λαμβάνει email αποστολής με τον αριθμό παρακολούθησης, και εσείς εκτυπώνετε τη λίστα παράδοσης της ημέρας για τον κούριερ.</p>
+        <ul class="points"><li>Ενημερώσεις κατάστασης για ACS και BOX NOW</li><li>Email αποστολής με σύνδεσμο παρακολούθησης</li><li>Λίστα παράδοσης στον κούριερ σε PDF</li></ul>
       </div>
       <div class="screen glass">
-        <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Shipment tracking #1047</b><span class="eg">Example</span></div>
+        <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Παρακολούθηση αποστολής #1047</b><span class="eg">Παράδειγμα</span></div>
         <div class="track">
-          <div class="tr"><span>Voucher issued</span><time>14 Nov, 10:12</time></div>
-          <div class="tr"><span>Picked up by courier</span><time>14 Nov, 17:40</time></div>
-          <div class="tr"><span>In transit</span><time>15 Nov, 07:05</time></div>
-          <div class="tr"><span>Delivered</span><time>15 Nov, 13:22</time></div>
+          <div class="tr"><span>Εκδόθηκε voucher</span><time>14 Νοε, 10:12</time></div>
+          <div class="tr"><span>Παραλήφθηκε από την εταιρεία ταχυμεταφορών</span><time>14 Νοε, 17:40</time></div>
+          <div class="tr"><span>Σε μεταφορά</span><time>15 Νοε, 07:05</time></div>
+          <div class="tr"><span>Παραδόθηκε</span><time>15 Νοε, 13:22</time></div>
         </div>
-        <div class="mail"><b>Your order #1047 has been shipped</b><span>BOX NOW tracking number 9900000522</span></div>
-        <div class="actions bottom"><span class="ctl strong">Courier handover manifest (PDF)</span></div>
+        <div class="mail"><b>Η παραγγελία σας #1047 απεστάλη</b><span>Αριθμός παρακολούθησης BOX NOW 9900000522</span></div>
+        <div class="actions bottom"><span class="ctl strong">Λίστα παράδοσης στον κούριερ (PDF)</span></div>
       </div>
     </div>
   </section>
@@ -481,29 +484,29 @@
     <div class="wrap">
       <div class="cod-grid">
         <div>
-          <div class="stop-no"><i>4</i>Remittance → Reconciled</div>
-          <h2 class="sec-h2">Know which COD payments actually arrived</h2>
-          <p class="body">Couriers collect cash on delivery and pay it to you later in one transfer, with a statement that is hard to check by hand. The plugin matches each line of that statement to its voucher and order and shows every difference.</p>
-          <ul class="points"><li>Exact to the cent, without rounding differences</li><li>Delivered parcels still unpaid after the agreed period</li><li>Accept a known difference and keep a record of it</li><li>Optional automatic check every day</li></ul>
-          <div class="csv"><b>From the courier statement</b><br>Upload the remittance CSV. Importing the same file twice is safe.</div>
+          <div class="stop-no"><i>4</i>Απόδοση → Συμφωνημένο</div>
+          <h2 class="sec-h2">Γνωρίζετε ποιες αντικαταβολές αποδόθηκαν</h2>
+          <p class="body">Οι εταιρείες ταχυμεταφορών εισπράττουν τις αντικαταβολές και τις αποδίδουν αργότερα με μία μεταφορά, μαζί με μια κατάσταση που δύσκολα ελέγχεται χειροκίνητα. Το plugin αντιστοιχίζει κάθε γραμμή της κατάστασης με το voucher και την παραγγελία της και εμφανίζει κάθε διαφορά.</p>
+          <ul class="points"><li>Ακρίβεια λεπτού (€0,01), χωρίς διαφορές στρογγυλοποίησης</li><li>Δέματα που παραδόθηκαν αλλά δεν αποδόθηκαν μέσα στη συμφωνημένη προθεσμία</li><li>Αποδοχή γνωστής διαφοράς, με καταγραφή</li><li>Προαιρετικός αυτόματος έλεγχος κάθε ημέρα</li></ul>
+          <div class="csv"><b>Από την κατάσταση του κούριερ</b><br>Ανεβάζετε το CSV απόδοσης. Η εκ νέου εισαγωγή του ίδιου αρχείου δεν δημιουργεί διπλές εγγραφές.</div>
         </div>
         <div class="screen glass">
-          <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>COD Reconciliation</b><span class="eg">Example</span></div>
+          <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Συμφωνία αντικαταβολών</b><span class="eg">Παράδειγμα</span></div>
           <div class="cod-totals">
-            <div class="tot" style="--c:var(--blue)"><span>Total Expected COD (€)</span><b>€4,812.60</b></div>
-            <div class="tot" style="--c:var(--ok)"><span>Recorded COD settlements (€)</span><b>€4,409.20</b></div>
-            <div class="tot" style="--c:var(--pending)"><span>Expected COD not yet reconciled (€)</span><b>€403.40</b></div>
-            <div class="tot" style="--c:var(--bad)"><span>Flagged Discrepancies (€)</span><b>€64.00</b></div>
+            <div class="tot" style="--c:var(--blue)"><span>Συνολική αναμενόμενη αντικαταβολή (€)</span><b>€4.812,60</b></div>
+            <div class="tot" style="--c:var(--ok)"><span>Καταγεγραμμένες αποδόσεις αντικαταβολών (€)</span><b>€4.409,20</b></div>
+            <div class="tot" style="--c:var(--pending)"><span>Αναμενόμενα ποσά αντικαταβολών χωρίς συμφωνία (€)</span><b>€403,40</b></div>
+            <div class="tot" style="--c:var(--bad)"><span>Επισημασμένες διαφορές (€)</span><b>€64,00</b></div>
           </div>
           <div class="scroll"><table>
-            <thead><tr><th>Voucher No</th><th>Order ID</th><th class="r">Expected COD (€)</th><th class="r">Difference (€)</th><th>Status</th></tr></thead>
+            <thead><tr><th>Αριθμός voucher</th><th>Παραγγελία</th><th class="r">Αναμενόμενη αντικαταβολή (€)</th><th class="r">Διαφορά (€)</th><th>Κατάσταση</th></tr></thead>
             <tbody>
-              <tr class="hl"><td>9900000522</td><td>#1047</td><td class="r">89.00</td><td class="r">0.00</td><td><span class="st ok">Reconciled</span></td></tr>
-              <tr><td>7700000142</td><td>#1042</td><td class="r">64.00</td><td class="r neg">−64.00</td><td><span class="st bad">Discrepancy</span></td></tr>
-              <tr><td>7700000139</td><td>#1031</td><td class="r">124.90</td><td class="r">—</td><td><span class="st pend">Overdue, unpaid</span></td></tr>
+              <tr class="hl"><td>9900000522</td><td>#1047</td><td class="r">89,00</td><td class="r">0,00</td><td><span class="st ok">Συμφωνημένο</span></td></tr>
+              <tr><td>7700000142</td><td>#1042</td><td class="r">64,00</td><td class="r neg">−64,00</td><td><span class="st bad">Διαφορά</span></td></tr>
+              <tr><td>7700000139</td><td>#1031</td><td class="r">124,90</td><td class="r">—</td><td><span class="st pend">Ληξιπρόθεσμη, χωρίς απόδοση</span></td></tr>
             </tbody>
           </table></div>
-          <div class="actions bottom"><span class="ctl primary">Record COD settlement</span><span class="ctl">Accept difference and reconcile</span></div>
+          <div class="actions bottom"><span class="ctl primary">Καταχώριση απόδοσης αντικαταβολής</span><span class="ctl">Αποδοχή διαφοράς και συμφωνία αντικαταβολής</span></div>
         </div>
       </div>
     </div>
@@ -513,25 +516,25 @@
   <section id="feeds" class="band">
     <div class="wrap stop flip">
       <div>
-        <h2>The same catalogue on Skroutz, Google and Meta</h2>
-        <p class="body">The Skroutz XML feed is generated in small background batches, so large catalogues finish without timeouts and the store stays fast. Variations, sizes and availability are mapped automatically.</p>
+        <h2>Ο ίδιος κατάλογος σε Skroutz, Google και Meta</h2>
+        <p class="body">Το Skroutz XML feed δημιουργείται σε μικρές παρτίδες στο παρασκήνιο, ώστε οι μεγάλοι κατάλογοι να ολοκληρώνονται χωρίς υπέρβαση χρονικού ορίου και το κατάστημα να παραμένει γρήγορο. Παραλλαγές, μεγέθη και διαθεσιμότητα αντιστοιχίζονται αυτόματα.</p>
         <div class="chan">
-          <div class="glass"><b>Skroutz Smart Cart</b><span>Skroutz orders imported as WooCommerce orders</span></div>
-          <div class="glass"><b>Skroutz Analytics</b><span>Tracking script and order reporting</span></div>
-          <div class="glass"><b>Google / Meta</b><span>Product feed for Merchant Center and catalogues</span></div>
-          <div class="glass"><b>Exclusions</b><span>Per product and per category</span></div>
+          <div class="glass"><b>Skroutz Smart Cart</b><span>Οι παραγγελίες του Skroutz εισάγονται ως παραγγελίες WooCommerce</span></div>
+          <div class="glass"><b>Skroutz Analytics</b><span>Script μέτρησης και αναφορά παραγγελιών</span></div>
+          <div class="glass"><b>Google / Meta</b><span>Feed προϊόντων για Merchant Center και καταλόγους</span></div>
+          <div class="glass"><b>Εξαιρέσεις</b><span>Ανά προϊόν και ανά κατηγορία</span></div>
         </div>
       </div>
       <div class="screen glass">
-        <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Skroutz XML</b><span class="eg">Example</span></div>
-        <div class="feed"><b>Last generated 2026-11-15 06:00 UTC: 4,218 products.</b><div class="meter"><i></i></div><span class="hint">Completed in 9 background batches</span></div>
+        <div class="screen-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><b>Skroutz XML</b><span class="eg">Παράδειγμα</span></div>
+        <div class="feed"><b>Τελευταία δημιουργία 2026-11-15 06:00 UTC: 4.218 προϊόντα.</b><div class="meter"><i></i></div><span class="hint">Ολοκληρώθηκε σε 9 παρτίδες στο παρασκήνιο</span></div>
         <div class="kv">
-          <span>Products in the feed</span><b>4,218</b>
-          <span>Excluded offers</span><b>37</b>
-          <span>Excluded categories</span><b>2</b>
-          <span>Out-of-stock products</span><b>Excluded</b>
+          <span>Προϊόντα στο feed</span><b>4.218</b>
+          <span>Εξαιρούμενες προσφορές</span><b>37</b>
+          <span>Εξαιρούμενες κατηγορίες</span><b>2</b>
+          <span>Προϊόντα εκτός αποθέματος</span><b>Εξαιρούνται</b>
         </div>
-        <div class="actions bottom"><span class="ctl strong">Copy Feed URL</span></div>
+        <div class="actions bottom"><span class="ctl strong">Αντιγραφή URL ροής</span></div>
       </div>
     </div>
   </section>
@@ -539,54 +542,54 @@
   <!-- Modules -->
   <section id="modules">
     <div class="wrap">
-      <div class="sec-intro"><h2 class="sec-h2">Switch on only the integrations you use</h2><p>Each integration has its own switch. When it is off, it loads nothing at checkout, runs no background jobs and adds no menus. Its settings and history are kept.</p></div>
+      <div class="sec-intro"><h2 class="sec-h2">Ενεργοποιείτε μόνο τις συνδέσεις που χρησιμοποιείτε</h2><p>Κάθε σύνδεση έχει τον δικό της διακόπτη. Όταν είναι ανενεργή, δεν φορτώνει τίποτα στο checkout, δεν εκτελεί εργασίες στο παρασκήνιο και δεν προσθέτει μενού. Οι ρυθμίσεις και το ιστορικό της διατηρούνται.</p></div>
       <div class="mods">
         <div class="mod-list glass">
-          <div class="screen-top"><b>Modules</b><span class="hint">11 integrations</span></div>
+          <div class="screen-top"><b>Ενότητες</b><span class="hint">11 συνδέσεις</span></div>
           <div class="sw-grid">
-            <div class="sw"><div><b>ACS Courier</b><small>Vouchers, labels, tracking, COD</small></div><i class="toggle" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>BOX NOW</b><small>Lockers at checkout, vouchers, tracking</small></div><i class="toggle" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>Skroutz XML</b><small>Product feed in background batches</small></div><i class="toggle" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>Skroutz Smart Cart</b><small>Skroutz orders in WooCommerce</small></div><i class="toggle" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>Skroutz Analytics</b><small>Tracking script and order reporting</small></div><i class="toggle" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>Google / Meta feed</b><small>Merchant Center and Meta catalogues</small></div><i class="toggle off" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>Meta Conversions API</b><small>Server-side purchase events, with consent</small></div><i class="toggle off" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>IRIS</b><small>Bank-app payment with a payment reference</small></div><i class="toggle" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>Greeklish live search</b><small>Finds “παπούτσια” for “papoutsia”</small></div><i class="toggle" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>Automatic COD check</b><small>Daily reconciliation in the background</small></div><i class="toggle" aria-hidden="true"></i></div>
-            <div class="sw"><div><b>AADE B2B verification</b><small>Bulk VAT check with your AADE credentials</small></div><i class="toggle off" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>ACS Courier</b><small>Voucher, ετικέτες, παρακολούθηση, αντικαταβολές</small></div><i class="toggle" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>BOX NOW</b><small>Θυρίδες στο checkout, voucher, παρακολούθηση</small></div><i class="toggle" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>Skroutz XML</b><small>Feed προϊόντων σε παρτίδες στο παρασκήνιο</small></div><i class="toggle" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>Skroutz Smart Cart</b><small>Παραγγελίες Skroutz στο WooCommerce</small></div><i class="toggle" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>Skroutz Analytics</b><small>Script μέτρησης και αναφορά παραγγελιών</small></div><i class="toggle" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>Google / Meta feed</b><small>Merchant Center και κατάλογοι Meta</small></div><i class="toggle off" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>Meta Conversions API</b><small>Γεγονότα αγοράς από τον server, με συγκατάθεση</small></div><i class="toggle off" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>IRIS</b><small>Πληρωμή από την εφαρμογή της τράπεζας με κωδικό πληρωμής</small></div><i class="toggle" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>Άμεση αναζήτηση με Greeklish</b><small>Βρίσκει «παπούτσια» για «papoutsia»</small></div><i class="toggle" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>Αυτόματος έλεγχος αντικαταβολών</b><small>Ημερήσια συμφωνία στο παρασκήνιο</small></div><i class="toggle" aria-hidden="true"></i></div>
+            <div class="sw"><div><b>Έλεγχος B2B στην ΑΑΔΕ</b><small>Μαζικός έλεγχος ΑΦΜ με τους δικούς σας κωδικούς ΑΑΔΕ</small></div><i class="toggle off" aria-hidden="true"></i></div>
           </div>
-          <div class="dev-line">In development: Geniki Taxydromiki, Speedex and installment rules.</div>
+          <div class="dev-line">Υπό ανάπτυξη: Γενική Ταχυδρομική, Speedex και κανόνες δόσεων.</div>
         </div>
         <div class="builtin glass">
-          <div class="screen-top"><b>Included with every licence</b></div>
+          <div class="screen-top"><b>Περιλαμβάνονται σε κάθε άδεια</b></div>
           <ul class="bl">
-            <li><b>COD reconciliation</b><span>CSV import, differences, settlement history</span></li>
-            <li><b>COD blacklist</b><span>No cash on delivery for refused parcels</span></li>
-            <li><b>Customer 360</b><span>Orders, vouchers, refunds, COD</span></li>
-            <li><b>Shipping rates</b><span>By weight, zone and parcel size</span></li>
-            <li><b>Packing slips</b><span>Printable per order</span></li>
-            <li><b>GDPR tools and courier sandbox</b><span>Personal data export and erase; voucher testing without real courier calls</span></li>
+            <li><b>Συμφωνία αντικαταβολών</b><span>Εισαγωγή CSV, διαφορές, ιστορικό αποδόσεων</span></li>
+            <li><b>Μαύρη λίστα αντικαταβολής</b><span>Χωρίς αντικαταβολή για πελάτες με αρνήσεις παραλαβής</span></li>
+            <li><b>Καρτέλα πελάτη 360°</b><span>Παραγγελίες, voucher, επιστροφές, αντικαταβολές</span></li>
+            <li><b>Χρεώσεις αποστολής</b><span>Ανά βάρος, ζώνη και μέγεθος δέματος</span></li>
+            <li><b>Δελτία συσκευασίας</b><span>Εκτύπωση ανά παραγγελία</span></li>
+            <li><b>Εργαλεία GDPR και sandbox κούριερ</b><span>Εξαγωγή και διαγραφή προσωπικών δεδομένων· δοκιμή voucher χωρίς κλήσεις στους πραγματικούς κούριερ</span></li>
           </ul>
         </div>
       </div>
-      <p class="one-plugin">Greek-market WooCommerce add-ons are usually sold one at a time. GR Commerce Suite covers couriers, COD, feeds, IRIS payments and search in one plugin with one settings area and one licence.</p>
+      <p class="one-plugin">Τα πρόσθετα WooCommerce για την ελληνική αγορά πωλούνται συνήθως χωριστά. Το GR Commerce Suite καλύπτει κούριερ, αντικαταβολές, feeds, πληρωμές IRIS και αναζήτηση σε ένα plugin, με ενιαίες ρυθμίσεις και μία άδεια.</p>
     </div>
   </section>
 
   <!-- Release check -->
   <section class="band" id="quality">
     <div class="wrap">
-      <div class="sec-intro"><h2 class="sec-h2">Tested before every release</h2><p>Order and payment data get the strictest handling in the plugin. A release ships only when the full automated test run passes.</p></div>
+      <div class="sec-intro"><h2 class="sec-h2">Έλεγχος πριν από κάθε έκδοση</h2><p>Οι παραγγελίες και οι πληρωμές έχουν την αυστηρότερη μεταχείριση στο plugin. Μια έκδοση κυκλοφορεί μόνο όταν περάσει το πλήρες σύνολο αυτόματων ελέγχων.</p></div>
       <div class="check glass">
-        <div class="screen-top"><b>Release check</b><span class="hint">Latest release</span></div>
+        <div class="screen-top"><b>Έλεγχος έκδοσης</b><span class="hint">Τελευταία έκδοση</span></div>
         <div class="check-grid">
-          <div class="ck"><span>Automated tests</span><b>2,755</b></div>
-          <div class="ck"><span>Tests on a real WooCommerce install</span><b>946</b></div>
-          <div class="ck"><span>Static analysis errors (PHPStan)</span><b>0</b></div>
-          <div class="ck"><span>Tested WordPress / WooCommerce</span><b>7.1 / 11.3</b></div>
-          <div class="ck"><span>Single site and multisite</span><b>Passed</b></div>
-          <div class="ck"><span>High-Performance Order Storage (HPOS)</span><b>Supported</b></div>
+          <div class="ck"><span>Αυτόματοι έλεγχοι</span><b>2.755</b></div>
+          <div class="ck"><span>Έλεγχοι σε πραγματική εγκατάσταση WooCommerce</span><b>946</b></div>
+          <div class="ck"><span>Σφάλματα στατικής ανάλυσης (PHPStan)</span><b>0</b></div>
+          <div class="ck"><span>Δοκιμασμένο σε WordPress / WooCommerce</span><b>7.1 / 11.3</b></div>
+          <div class="ck"><span>Μεμονωμένο site και multisite</span><b>Επιτυχής</b></div>
+          <div class="ck"><span>High-Performance Order Storage (HPOS)</span><b>Υποστηρίζεται</b></div>
         </div>
       </div>
     </div>
@@ -596,21 +599,21 @@
   <section id="price">
     <div class="wrap price-grid">
       <div class="price-card glass">
-        <div class="plan">Annual licence, one site</div>
-        <div class="amount"><b>€89</b><span>per year</span></div>
-        <p class="sub">Every module included. About €7.42 per month.</p>
-        <ul class="points"><li>Couriers, COD, feeds, IRIS payments and search</li><li>Unlimited orders and vouchers, no per-parcel fees</li><li>Updates for one year</li><li>Email support from the developer</li></ul>
-        <a class="btn btn-main" href="mailto:lethshiningstar@gmail.com?subject=GR%20Commerce%20Suite%20-%2030-day%20free%20trial">Start the 30-day free trial</a>
-        <p class="contact">Or write to <span>lethshiningstar@gmail.com</span></p>
+        <div class="plan">Ετήσια άδεια, ένα site</div>
+        <div class="amount"><b>€89</b><span>τον χρόνο</span></div>
+        <p class="sub">Όλες οι ενότητες περιλαμβάνονται. Περίπου €7,42 τον μήνα.</p>
+        <ul class="points"><li>Κούριερ, αντικαταβολές, feeds, πληρωμές IRIS και αναζήτηση</li><li>Απεριόριστες παραγγελίες και voucher, χωρίς χρέωση ανά δέμα</li><li>Ενημερώσεις για ένα έτος</li><li>Υποστήριξη μέσω email από τον δημιουργό</li></ul>
+        <a class="btn btn-main" href="mailto:lethshiningstar@gmail.com?subject=GR%20Commerce%20Suite%20-%20%CE%94%CF%89%CF%81%CE%B5%CE%AC%CE%BD%20%CE%B4%CE%BF%CE%BA%CE%B9%CE%BC%CE%AE%2030%20%CE%B7%CE%BC%CE%B5%CF%81%CF%8E%CE%BD">Ξεκινήστε τη δωρεάν δοκιμή 30 ημερών</a>
+        <p class="contact">Ή γράψτε στο <span>lethshiningstar@gmail.com</span></p>
       </div>
       <div>
-        <h2 class="sec-h2">How the trial works</h2>
+        <h2 class="sec-h2">Πώς λειτουργεί η δοκιμή</h2>
         <div class="steps">
-          <div class="step glass"><b>Request the trial</b><span>You receive the plugin and a licence key for one site.</span></div>
-          <div class="step glass"><b>Use everything for 30 days</b><span>Issue vouchers, reconcile past COD statements and publish your feeds.</span></div>
-          <div class="step glass"><b>Decide</b><span>Continue at €89 per year, or cancel before day 30 and pay nothing.</span></div>
+          <div class="step glass"><b>Ζητάτε τη δοκιμή</b><span>Λαμβάνετε το plugin και κλειδί άδειας για ένα site.</span></div>
+          <div class="step glass"><b>Χρησιμοποιείτε τα πάντα για 30 ημέρες</b><span>Εκδίδετε voucher, συμφωνείτε παλιές αποδόσεις αντικαταβολών και δημοσιεύετε τα feeds σας.</span></div>
+          <div class="step glass"><b>Αποφασίζετε</b><span>Συνεχίζετε με €89 τον χρόνο ή ακυρώνετε πριν από την 30ή ημέρα χωρίς χρέωση.</span></div>
         </div>
-        <p class="guarantee">30-day free trial, followed by a 14-day money-back guarantee.</p>
+        <p class="guarantee">Δωρεάν δοκιμή 30 ημερών και στη συνέχεια εγγύηση επιστροφής χρημάτων 14 ημερών.</p>
       </div>
     </div>
   </section>
@@ -618,19 +621,19 @@
   <!-- FAQ -->
   <section id="faq" class="band">
     <div class="wrap">
-      <div class="sec-intro"><h2 class="sec-h2">Frequently asked questions</h2></div>
+      <div class="sec-intro"><h2 class="sec-h2">Συχνές ερωτήσεις</h2></div>
       <div class="faq glass">
         <div>
-          <details><summary>Which couriers are supported?</summary><p>ACS Courier and BOX NOW. Geniki Taxydromiki and Speedex are in development and will be added as modules.</p></details>
-          <details><summary>How does COD reconciliation find missing payments?</summary><p>Couriers send a CSV with each COD payout. The plugin matches every line to its voucher and order and lists parcels that were delivered but not paid, paid short or missing from the statement.</p></details>
-          <details><summary>Will the Skroutz feed slow down my store?</summary><p>No. The feed is generated in small background batches instead of one long request, so large catalogues finish without server timeouts.</p></details>
-          <details><summary>Is it compatible with HPOS?</summary><p>Yes. GR Commerce Suite declares compatibility with WooCommerce High-Performance Order Storage (HPOS) and reads and writes order data only through the WooCommerce order API.</p></details>
+          <details><summary>Ποιες εταιρείες ταχυμεταφορών υποστηρίζονται;</summary><p>Η ACS Courier και η BOX NOW. Η Γενική Ταχυδρομική και η Speedex είναι υπό ανάπτυξη και θα προστεθούν ως ενότητες.</p></details>
+          <details><summary>Πώς εντοπίζει η συμφωνία αντικαταβολών τις αποδόσεις που λείπουν;</summary><p>Οι εταιρείες ταχυμεταφορών στέλνουν ένα CSV με κάθε απόδοση. Το plugin αντιστοιχίζει κάθε γραμμή με το voucher και την παραγγελία της και εμφανίζει όσα δέματα παραδόθηκαν αλλά δεν αποδόθηκαν, αποδόθηκαν με μικρότερο ποσό ή λείπουν από την κατάσταση.</p></details>
+          <details><summary>Επιβαρύνει το Skroutz feed το κατάστημα;</summary><p>Όχι. Το feed δημιουργείται σε μικρές παρτίδες στο παρασκήνιο αντί για ένα μεγάλο αίτημα, οπότε οι μεγάλοι κατάλογοι ολοκληρώνονται χωρίς υπέρβαση χρονικού ορίου στον server.</p></details>
+          <details><summary>Είναι συμβατό με το HPOS;</summary><p>Ναι. Το GR Commerce Suite δηλώνει συμβατότητα με το High-Performance Order Storage (HPOS) του WooCommerce και διαβάζει ή αποθηκεύει δεδομένα παραγγελιών μόνο μέσω του API παραγγελιών του WooCommerce.</p></details>
         </div>
         <div>
-          <details><summary>Does it work with the Blocks checkout?</summary><p>Yes. Both the Blocks and the Classic checkout are supported, including the BOX NOW locker choice and the invoice or receipt choice.</p></details>
-          <details><summary>Where is my data sent?</summary><p>We run no servers that store your customer data. Plugin data stays in your WordPress database. Order details go only to services you switch on, such as your courier, AADE or Meta. The licence check sends only your licence key and site address.</p></details>
-          <details><summary>What happens after the trial?</summary><p>The licence continues at €89 per year for one site, with updates and support. The 14-day money-back guarantee applies from the first payment.</p></details>
-          <details><summary>Can it handle large catalogues and many orders?</summary><p>Yes. Feeds are built in batches of up to 200 products with saved checkpoints, COD statements are read line by line instead of loaded whole, and order lists are read from the database in limited batches.</p></details>
+          <details><summary>Λειτουργεί με το Blocks checkout;</summary><p>Ναι. Υποστηρίζονται τόσο το Blocks όσο και το Classic checkout, μαζί με την επιλογή θυρίδας BOX NOW και την επιλογή τιμολογίου ή απόδειξης.</p></details>
+          <details><summary>Πού αποστέλλονται τα δεδομένα μου;</summary><p>Δεν διατηρούμε servers που αποθηκεύουν δεδομένα των πελατών σας. Τα δεδομένα του plugin παραμένουν στη βάση δεδομένων του WordPress σας. Στοιχεία παραγγελιών αποστέλλονται μόνο στις υπηρεσίες που ενεργοποιείτε, όπως η εταιρεία ταχυμεταφορών, η ΑΑΔΕ ή η Meta. Ο έλεγχος άδειας στέλνει μόνο το κλειδί άδειας και τη διεύθυνση του site.</p></details>
+          <details><summary>Τι ισχύει μετά τη δοκιμή;</summary><p>Η άδεια συνεχίζεται με €89 τον χρόνο για ένα site, με ενημερώσεις και υποστήριξη. Η εγγύηση επιστροφής χρημάτων 14 ημερών ισχύει από την πρώτη πληρωμή.</p></details>
+          <details><summary>Υποστηρίζει μεγάλους καταλόγους και μεγάλο όγκο παραγγελιών;</summary><p>Ναι. Τα feeds δημιουργούνται σε παρτίδες έως 200 προϊόντων με αποθηκευμένα σημεία συνέχισης, οι καταστάσεις αντικαταβολών διαβάζονται γραμμή-γραμμή αντί να φορτώνονται ολόκληρες, και οι λίστες παραγγελιών διαβάζονται από τη βάση σε περιορισμένες παρτίδες.</p></details>
         </div>
       </div>
     </div>
@@ -640,11 +643,11 @@
 <footer>
   <div class="wrap">
     <div class="ft">
-      <div><a class="brand" href="#top" style="font-size:16px;font-weight:700;padding-left:0">GR Commerce Suite</a><p style="margin-top:12px;max-width:46ch">Courier vouchers, COD reconciliation and marketplace feeds for WooCommerce stores in Greece.</p></div>
-      <div><h3>Guarantee</h3><p>30-day free trial, followed by a 14-day money-back guarantee.</p></div>
-      <div><h3>Support</h3><p><a href="mailto:lethshiningstar@gmail.com">lethshiningstar@gmail.com</a></p></div>
+      <div><a class="brand" href="#top" style="font-size:16px;font-weight:700;padding-left:0">GR Commerce Suite</a><p style="margin-top:12px;max-width:46ch">Voucher κούριερ, συμφωνία αντικαταβολών και feeds για marketplaces, για καταστήματα WooCommerce στην Ελλάδα.</p></div>
+      <div><h3>Εγγύηση</h3><p>Δωρεάν δοκιμή 30 ημερών και στη συνέχεια εγγύηση επιστροφής χρημάτων 14 ημερών.</p></div>
+      <div><h3>Υποστήριξη</h3><p><a href="mailto:lethshiningstar@gmail.com">lethshiningstar@gmail.com</a></p></div>
     </div>
-    <p class="legal">© 2026 GR Commerce Suite. ACS, BOX NOW, Skroutz and other names belong to their respective owners. GR Commerce Suite is an independent product and is not affiliated with these companies.</p>
+    <p class="legal">© 2026 GR Commerce Suite. Τα ACS, BOX NOW, Skroutz και άλλα ονόματα ανήκουν στους κατόχους τους. Το GR Commerce Suite είναι ανεξάρτητο προϊόν, χωρίς εμπορική σχέση με τις εταιρείες αυτές.</p>
   </div>
 </footer>
 
@@ -662,6 +665,20 @@
     }); });
     if (mq.addEventListener) { mq.addEventListener('change', paint); }
     paint();
+  })();
+  (function () {
+    var ids = ['top', 'journey', 's-checkout', 's-voucher', 's-delivery', 'cod', 'feeds', 'modules', 'quality', 'price', 'faq'];
+    function here() {
+      var best = '';
+      ids.forEach(function (id) { var el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= 140) { best = id; } });
+      return best && best !== 'top' ? '#' + best : '';
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('.langsw a[hreflang]'), function (a) {
+      a.addEventListener('click', function () {
+        try { localStorage.setItem('grcs-lang', a.getAttribute('hreflang')); } catch (e) {}
+        a.href = a.getAttribute('href').split('#')[0] + here();
+      });
+    });
   })();
   (function () {
     var btn = document.getElementById('menu-btn');
