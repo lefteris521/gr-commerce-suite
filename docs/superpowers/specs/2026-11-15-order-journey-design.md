@@ -55,7 +55,7 @@ Comparison: "separate plugins vs one plugin" in prose inside the Modules section
 - Direction B; liquid glass kept; EN/ΕΛ switch; links in the top bar; professional Greek.
 
 ## Builder's calls (owner may override)
-- Trial button stays a `mailto:` with the address also shown as selectable text (owner question 1 open).
+- Trial buttons (top bar, phone menu, hero, price card) go to the Lemon Squeezy checkout https://gr-commerce-suite.lemonsqueezy.com/checkout (owner 2026-11-15); support email stays as text and a footer link.
 - Gmail support address kept until a domain address is given (question 2 open).
 - No competitor price numbers (question 3 open).
 - Drawn screens, not screenshots (question 4 open).
