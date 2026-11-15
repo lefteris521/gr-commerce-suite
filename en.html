@@ -124,11 +124,17 @@
     .langsw [aria-current] { background: var(--blue); color: var(--blue-ink); }
     .themesw [aria-pressed="true"] { background: var(--text); color: var(--page); }
     .menu-btn { background: none; border: 1px solid var(--line); border-radius: 999px; color: var(--text); width: 42px; height: 42px; display: grid; place-items: center; cursor: pointer; }
-    .mmenu { display: none; max-width: var(--max); margin: 8px auto 0; border-radius: var(--r); padding: 10px; }
-    .mmenu.open { display: block; }
-    .mm { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-    .mm a { padding: 12px 14px; border-radius: 10px; color: var(--text); text-decoration: none; font-weight: 500; background: var(--glass-strong); border: 1px solid var(--line); }
-    .mmenu .btn { display: flex; width: 100%; margin-top: 10px; padding: 13px 20px; }
+    .menu-btn .i-close { display: none; }
+    .menu-btn[aria-expanded="true"] .i-open { display: none; }
+    .menu-btn[aria-expanded="true"] .i-close { display: block; }
+    .mmenu { display: none; max-width: var(--max); margin: 8px auto 0; border-radius: 20px; padding: 6px 8px 10px; }
+    .mmenu.open { display: block; box-shadow: var(--glass-shadow), 0 0 0 100vmax rgba(8, 12, 22, .28); }
+    .mm { display: flex; flex-direction: column; }
+    .mm a { display: flex; align-items: center; justify-content: space-between; padding: 13px 12px; color: var(--text); text-decoration: none; font-weight: 500; font-size: 16.5px; border-bottom: 1px solid var(--line); }
+    .mm a:last-child { border-bottom: 0; }
+    .mm a::after { content: ""; width: 7px; height: 7px; border-top: 1.8px solid var(--text-3); border-right: 1.8px solid var(--text-3); transform: rotate(45deg); }
+    .mm a:active { background: var(--blue-soft); border-radius: 10px; }
+    .mmenu .btn { display: flex; width: 100%; margin-top: 8px; padding: 13px 20px; }
     @media (min-width: 820px) { .links { display: flex; } .tools { margin-left: 14px; } .menu-btn, .mmenu, .mmenu.open { display: none; } }
     @media (min-width: 820px) and (max-width: 919px) { .brand { font-size: 15px; } .links { gap: 12px; } .links a { font-size: 13.5px; } .links a[href="#faq"] { display: none; } }
     section, .hero { scroll-margin-top: 96px; }
@@ -363,7 +369,7 @@
         </div>
       </div>
       <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
   </div>
@@ -684,13 +690,11 @@
     var btn = document.getElementById('menu-btn');
     var menu = document.getElementById('mmenu');
     if (!btn || !menu) return;
-    btn.addEventListener('click', function () {
-      var open = menu.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    menu.addEventListener('click', function (e) {
-      if (e.target.closest('a')) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
-    });
+    function set(open) { menu.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+    btn.addEventListener('click', function (e) { e.stopPropagation(); set(!menu.classList.contains('open')); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) { set(false); } });
+    document.addEventListener('click', function (e) { if (menu.classList.contains('open') && !menu.contains(e.target)) { set(false); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); } });
   })();
 </script>
 </body>
